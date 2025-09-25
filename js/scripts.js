@@ -80,4 +80,33 @@ window.addEventListener('DOMContentLoaded', event => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Handle contact form submission to construct mailto link
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            const subject = 'Data Forest 문의';
+            const body = `
+안녕하세요, Data Forest 문의드립니다.
+
+--------------------------------
+보내는 사람: ${name}
+이메일: ${email}
+연락처: ${phone}
+--------------------------------
+
+메시지:
+${message}
+            `;
+
+            window.location.href = `mailto:urbanshow@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    }
 });
