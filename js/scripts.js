@@ -51,9 +51,33 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
 
+    // SimpleLightbox is not used in the new design, so this part is commented out or can be removed.
+    // If you add a portfolio/gallery section back, you can re-enable this.
+    //
+    // new SimpleLightbox({
+    //     elements: '#portfolio a.portfolio-box'
+    // });
+
+    // Scroll-based fade-in animation
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observerOptions = {
+        root: null, // relative to document viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of the item has to be visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once it's visible
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
