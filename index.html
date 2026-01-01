@@ -38,6 +38,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .youtube-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 비율 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .youtube-container iframe,
+        .youtube-container a,
+        .youtube-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -81,7 +101,8 @@
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5">DePIN 청사진: 중앙 집중식 방식보다 훨씬 저렴한 비용으로, 더 신선하고 광범위한 커버리지의 데이터를 수집하는 새로운
                         패러다임.<br />단순한 사진이 아닌, '검증 가능한 증거'를 판매합니다. 데이터 무결성 및 개인정보 보호 기술을 통해 수집된 고부가가치 데이터.
-                        <br>★★★★= 특허출원중 =★★★★</p>
+                        <br>★★★★= 특허출원중 =★★★★
+                    </p>
                     <a class="btn btn-primary btn-xl" href="#contributors">앱 다운로드</a>
                     <a class="btn btn-light btn-xl" href="#enterprises">기업 API 문의</a>
                 </div>
@@ -98,6 +119,17 @@
                     <p class="text-white-75 mb-4">Data Forest는 Web 3.0 기술을 기반으로 한 탈중앙화 데이터 플랫폼입니다. 누구나 데이터 수집에 기여하고, 그에
                         대한 공정한 보상을 받을 수 있는 새로운 생태계를 만들어갑니다. 당신의 참여가 데이터의 가치를 높이고 세상을 변화시키는 원동력이 됩니다.</p>
                     <a class="btn btn-light btn-xl" href="#contributors">참여 방법 알아보기</a>
+                    <div class="youtube-container mt-5">
+                        <a href="https://www.youtube.com/watch?v=CYYbw8-K1Go" target="_blank" title="YouTube에서 보기">
+                            <img src="https://img.youtube.com/vi/CYYbw8-K1Go/maxresdefault.jpg"
+                                alt="Data Forest Video Thumbnail">
+                            <div
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;">
+                                <i class="bi bi-play-circle-fill"
+                                    style="font-size: 5rem; opacity: 0.8; text-shadow: 0 0 20px rgba(0,0,0,0.5);"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -327,7 +359,8 @@
     <section class="page-section bg-dark text-white fade-in-section">
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">지금 바로 데이터의 숲에 참여하세요!</h2>
-            <a class="btn btn-light btn-xl" href="collect_data.html" target="_blank" rel="noopener noreferrer">앱 다운로드하고 수익 창출하기</a>
+            <a class="btn btn-light btn-xl" href="collect_data.html" target="_blank" rel="noopener noreferrer">앱 다운로드하고
+                수익 창출하기</a>
         </div>
     </section>
     <!-- Contact-->
